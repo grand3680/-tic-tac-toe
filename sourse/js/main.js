@@ -4,7 +4,7 @@ var boxsises = document.getElementsByClassName("box");
 let counting_wins_0 = 0;
 let counting_wins_x = 0;
 
-// список с выигрышными значениями
+// List win pos
 let arr = [
         [0, 1, 2], // horizontal right
         [3, 4, 5], // horizontal right
@@ -15,7 +15,8 @@ let arr = [
         [0, 4, 8], // right on the cross lying
         [2, 4, 6], // right on the cross lying
     ]
-    // делегирование 
+
+// delegation
 document.querySelector("section").onclick = function(event) {
     let target = event.target; // where was the click?
     if (target.tagName != 'DIV') return; // not on DIV ? then not interested
@@ -42,7 +43,7 @@ function highlight(div) {
         document.querySelector("h1").textContent = "walks - zeros";
         selectedDiv.textContent = "X";
         check();
-        // бот Нолики с X
+        // bat zero
         for (let i = 0; i < arr.length; i++) {
             if (boxsises[arr[i][0]].innerHTML == "0" && boxsises[arr[i][1]].innerHTML == "0" && boxsises[arr[i][2]].innerHTML == "") {
                 boxsises[arr[i][2]].style.color = 'red';
